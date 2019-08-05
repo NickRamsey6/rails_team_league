@@ -1,0 +1,14 @@
+<h1>Games</h1>
+
+<% if @games.any? %>
+  <p>Definitely some games</p>
+  <ul>
+  <% @games.each do |game| %>
+    <li><%= game.team_one %> vs <%= game.team_two %></li>
+  <% end %>
+  </ul>
+<% else %>
+  <p>No games at this time.</p>
+<% end %>
+
+<p><%= link_to "New Game", new_game_path %></p>
